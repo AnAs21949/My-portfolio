@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .button {
+    position: relative;
+    border: none;
+    font-size: 18px;
+    transition: color 0.5s, transform 0.2s, background-color 0.2s;
+    outline: none;
+    border-radius: 3px;
+    margin: 0 10px;
+    padding: 23px 33px;
+    border: 3px solid transparent;
+  }
+  .button:active {
+    transform: translateY(3px);
+  }
+  .button::after, .button::before {
+    border-radius: 3px;
+  }
+  .borderC {
+    background-color: transparent;
+    color: #e6e6e6;
+  }
+  .borderC:hover {
+    background-color: transparent;
+    box-shadow: none;
+    color: #e6e6e6;
+  }
+  .borderC::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #e6e6e6;
+    transition: opacity 0.3s, border 0.3s;
+  }
+  .borderC:hover::before {
+    opacity: 0;
+  }
+  .borderC::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 3px solid #e6e6e6;
+    opacity: 0;
+    z-index: -1;
+    transform: scaleX(1.1) scaleY(1.3);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .borderC:hover::after {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+  input#menu {
+    display: none;
+  }
+  .icon {
+    background: transparent;
+    cursor: pointer;
+    display: block;
+    height: 24px;
+    padding: 16px;
+    width: 24px;
+  }
+  label.icon {
+    z-index: 200;
+  }
+  .icon .menu,
+  .icon .menu::before,
+  .icon .menu::after {
+    background: #9FB1BD;
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    transition: background ease 0.3s, top ease 0.3s 0.3s, transform ease 0.3s;
+    width: 20px;
+  }
+  .icon:hover .menu,
+  .icon:hover .menu::before,
+  .icon:hover .menu::after {
+    background: #47B74B;
+  }
+  .icon .menu::before {
+    top: -6px;
+  }
+  .icon .menu::after {
+    top: 6px;
+  }
+  #menu:checked + .icon .menu {
+    background: transparent;
+  }
+  #menu:checked + .icon .menu::before {
+    transform: rotate(45deg);
+  }
+  #menu:checked + .icon .menu::after {
+    transform: rotate(-45deg);
+  }
+  #menu:checked + .icon .menu::before,
+  #menu:checked + .icon .menu::after {
+    top: 0;
+    transition: top ease 0.3s, transform ease 0.3s 0.3s;
+  }
+}/*# sourceMappingURL=index.css.map */

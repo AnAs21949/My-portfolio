@@ -1,0 +1,36 @@
+.banner {
+    padding:  2rem 0;
+    display: inline-block;
+    white-space: nowrap;
+    display: inline-block;
+    .slides{
+        display: inline-block;
+        animation: moveText 20s linear infinite;
+        .moving-text {
+            font-size: 150px;
+        }
+    }
+    .slides1{
+        display: inline-block;
+        animation: moveText1 20s linear infinite;
+        .moving-text {
+          font-size: 150px;
+        }
+    }
+}
+@keyframes moveText {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes moveText1 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
