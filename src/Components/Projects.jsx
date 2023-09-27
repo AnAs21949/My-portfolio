@@ -9,7 +9,7 @@ const projects = [
     {
       title: "Visit Morocco Website",
       description:
-        "This website is build to motivate exploring the beauty and culture of Morocco, enticing you to plan your next adventure",
+        "This website is build to motivate exploring the beauty and culture of Morocco, enticing you to plan your next adventure.",
       getImageSrc: () => photo1,
       webLink:"https://anas21949.github.io/Go_Travel/",
     },
