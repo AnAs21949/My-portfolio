@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./slider.css";
 import {
+  faBootstrap,
   faCss3,
   faGitAlt,
   faGithub,
@@ -8,6 +9,7 @@ import {
   faJsSquare,
   faReact,
 } from "@fortawesome/free-brands-svg-icons";
+import tailwind from "../../images/tailwind.png";
 
 export default function Slider() {
   return (
@@ -20,9 +22,15 @@ export default function Slider() {
           <FontAwesomeIcon className="mx-14" icon={faReact} color="#5ED4F4" />
           <FontAwesomeIcon
             className="mx-14"
+            icon={faBootstrap}
+            color="#563d7c"
+          />
+          <FontAwesomeIcon
+            className="mx-14"
             icon={faJsSquare}
             color="#EFD81D"
           />
+          <img src={tailwind} className="w-[190px] mx-14 inline-flex" alt="" />
           <FontAwesomeIcon className="mx-14" icon={faGitAlt} color="#EC4D28" />
         </strong>
         <strong className="moving-text mx-10">
@@ -32,9 +40,15 @@ export default function Slider() {
           <FontAwesomeIcon className="mx-14" icon={faReact} color="#5ED4F4" />
           <FontAwesomeIcon
             className="mx-14"
+            icon={faBootstrap}
+            color="#563d7c"
+          />
+          <FontAwesomeIcon
+            className="mx-14"
             icon={faJsSquare}
             color="#EFD81D"
           />
+          <img src={tailwind} className="w-[190px] mx-14 inline-flex" alt="" />
           <FontAwesomeIcon className="mx-14" icon={faGitAlt} color="#EC4D28" />
         </strong>
       </div>
@@ -51,9 +65,16 @@ export default function Slider() {
           <FontAwesomeIcon className="mx-14" icon={faReact} color="#5ED4F4" />
           <FontAwesomeIcon
             className="mx-14"
+            icon={faBootstrap}
+            color="#563d7c"
+          />
+
+          <FontAwesomeIcon
+            className="mx-14"
             icon={faJsSquare}
             color="#EFD81D"
           />
+          <img src={tailwind} className="w-[190px] mx-14 inline-flex" alt="" />
           <FontAwesomeIcon className="mx-14" icon={faGitAlt} color="#EC4D28" />
         </strong>
         <strong className="moving-text mx-10">
@@ -63,9 +84,16 @@ export default function Slider() {
           <FontAwesomeIcon className="mx-14" icon={faReact} color="#5ED4F4" />
           <FontAwesomeIcon
             className="mx-14"
+            icon={faBootstrap}
+            color="#563d7c"
+          />
+
+          <FontAwesomeIcon
+            className="mx-14"
             icon={faJsSquare}
             color="#EFD81D"
           />
+          <img className=" mx-14 inline-flex w-[190px]" src={tailwind} alt="" />
           <FontAwesomeIcon className="mx-14" icon={faGitAlt} color="#EC4D28" />
         </strong>
       </div>
