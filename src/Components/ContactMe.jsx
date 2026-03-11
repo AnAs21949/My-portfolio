@@ -1,69 +1,43 @@
 import emailjs from "@emailjs/browser";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import { useAlertContext } from "../context/AlertContext";
-// import UseSubmit from "../hooks/UseSubmit";
-import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
 import MyModal from "./MyModal";
 
 export default function ContactMe() {
   const form = useRef();
-  // const { response, submit} = UseSubmit();
-  // const { onOpen } = useAlertContext();
   const [active, setActive] = useState(false);
 
   const sendEmail = () => {
-    emailjs
-      .sendForm(
-        "service_nlbcq6g",
-        "template_kojgf3w",
-        form.current,
-        "x6I1X1zpvUGyHtx92"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          console.log("message sent");
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      form.current,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
   };
 
   const formik = useFormik({
     initialValues: {
       user_name: "",
       user_email: "",
-      message: " ",
+      message: "",
     },
-    onSubmit: (values) => {
+    onSubmit: () => {
       setActive(true);
       formik.resetForm();
-      sendEmail(); // Call the sendEmail function to actually send the email
+      sendEmail();
     },
-
     validationSchema: Yup.object({
       user_name: Yup.string().required("First Name is required"),
       user_email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
       message: Yup.string()
-        .min(20, " too short min 20 letters")
-        .required("Comment is required"),
+        .min(20, "Too short, min 20 characters")
+        .required("Message is required"),
     }),
   });
-
-  // useEffect(() => {
-  //   if (response) {
-  //     onOpen(response.type, response.message);
-  //     if (response.type === "success") {
-  //       formik.resetForm();
-  //     }
-  //   }
-  // }, [response]);
 
   const handleOnClose = () => setActive(false);
 
@@ -84,7 +58,7 @@ export default function ContactMe() {
             onSubmit={formik.handleSubmit}
           >
             <div className="flex flex-col w-full">
-              <label htmlFor="user_name ">Name</label>
+              <label htmlFor="user_name">Name</label>
               <input
                 id="user_name"
                 name="user_name"

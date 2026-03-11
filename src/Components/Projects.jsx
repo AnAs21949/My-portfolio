@@ -1,8 +1,3 @@
-import Card from "./Card";
-
-import photo1 from "../images/photo1.jpg";
-import photo2 from "../images/photo2.jpg";
-import photo3 from "../images/photo3.jpg";
 import space_pc from "../images/space_pc.png";
 import space_phone from "../images/space_phone.png";
 import lemon_phone from "../images/lemon_phone.png";
@@ -15,38 +10,6 @@ import formPc from "../images/form_pc.png";
 import formPhone from "../images/form_phone.png";
 import designoPc from "../images/designo_pc.png";
 import designoPhone from "../images/designo_phone.png";
-// import photo4 from "../images/photo4.jpg";
-
-const projects = [
-  {
-    title: "Visit Morocco Website",
-    description:
-      "This website is build to motivate exploring the beauty and culture of Morocco, enticing you to plan your next adventure",
-    getImageSrc: () => photo1,
-    webLink: "https://anas21949.github.io/Go_Travel/",
-  },
-  {
-    title: "TO DO App",
-    description:
-      "A sleek and efficient to-do app built with React.js, seamlessly organizing tasks and priorities to boost productivity with a user-friendly interface.",
-    getImageSrc: () => photo2,
-    webLink: "https://anas21949.github.io/todo/",
-  },
-  {
-    title: "Nike Landing Page",
-    description:
-      "A dynamic Nike landing page, powered by React.js, showcasing the latest athletic innovations, exclusive releases, and immersive brand experiences for passionate sport and fitness enthusiasts.",
-    getImageSrc: () => photo3,
-    webLink: "https://anas21949.github.io/Nike/",
-  },
-  // {
-  //   title: "Event planner",
-  //   description:
-  //     "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-  //   getImageSrc: () => photo4,
-  //   webLink:"https://anas21949.github.io/Go_Travel/",
-  // },
-];
 
 export default function Projects() {
   return (
@@ -57,17 +20,6 @@ export default function Projects() {
       <h1 className="py-2 uppercase pl-10 font-medium font-mono text-xl text-white tracking-wider">
         welcome to my universe
       </h1>
-      {/* <div className="grid gap-8 grid-cols-[repeat(1,minmax(0,1fr))] mt-8 px-15 md:px-32">
-        {projects.map((project) => (
-          <Card
-            key={project.title}
-            title={project.title}
-            description={project.description}
-            imageSrc={project.getImageSrc()}
-            webLink={project.webLink}
-          />
-        ))}
-      </div> */}
       <div className="flex flex-col gap-40 items-center justify-center mt-10">
         <div className="flex flex-col items-center justify-center">
           <a
@@ -96,16 +48,11 @@ export default function Projects() {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <a
-            href="http://127.0.0.1:5500/bookmark-landing-page/index.html/"
-            className="flex flex-col items-center justify-center"
-          >
-            <h1 className="py-2 pb-5 uppercase font-medium font-mono text-xl text-slate-300 ">
-              Bookmark
-            </h1>
-            <img className="w-full hidden lg:block" src={bookmark_pc} alt="" />
-            <img src={bookmark_phone} className="lg:hidden" alt="" />
-          </a>
+          <h1 className="py-2 pb-5 uppercase font-medium font-mono text-xl text-slate-300 ">
+            Bookmark
+          </h1>
+          <img className="w-full hidden lg:block" src={bookmark_pc} alt="" />
+          <img src={bookmark_phone} className="lg:hidden" alt="" />
         </div>
 
         <div className="flex flex-col items-center justify-center">
@@ -120,6 +67,7 @@ export default function Projects() {
             <img src={todo_phone} className="lg:hidden" alt="" />
           </a>
         </div>
+
         <div className="flex flex-col items-center justify-center">
           <a
             href="https://anas21949.github.io/multi-step-form/"
@@ -132,6 +80,7 @@ export default function Projects() {
             <img src={formPhone} className="lg:hidden" alt="" />
           </a>
         </div>
+
         <div className="flex flex-col items-center justify-center">
           <a
             href="https://anas21949.github.io/designo/"
