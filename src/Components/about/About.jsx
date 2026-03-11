@@ -1,8 +1,6 @@
 import "./about.css";
 
 import myPic from "../../assets/imgs/me.jpeg";
-import Slider from "../slider/Slider";
-import Projects from "../Projects";
 
 export default function About() {
   return (

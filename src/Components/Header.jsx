@@ -15,24 +15,19 @@ export default function Header() {
     }
   };
 
-  const [scrollValue, setScrollValue] = useState(0);
   const [scroll, setScroll] = useState(false);
 
   const prevScroll = useRef(0);
   useEffect(() => {
     const handleScroll = () => {
       const newScrollValue = window.scrollY;
-      setScrollValue(newScrollValue);
 
       if (newScrollValue > prevScroll.current) {
-        // console.log('Scrolled down');
         setScroll(true);
       } else {
-        // console.log('Scrolled up');
         setScroll(false);
       }
 
-      // Update the previous scroll value
       prevScroll.current = newScrollValue;
     };
 
@@ -40,7 +35,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
 
   return (
     <header
@@ -60,10 +55,10 @@ export default function Header() {
           </label>
         </div>
         <div className="hidden gap-10 text-sm md:flex">
-          <a href="#about" id="about" onClick={handleClick("projects")}>
+          <a href="#projects" onClick={handleClick("projects")}>
             PROJECTS
           </a>
-          <a href="#projects" id="projects" onClick={handleClick("about")}>
+          <a href="#about" onClick={handleClick("about")}>
             ABOUT
           </a>
         </div>
@@ -90,10 +85,10 @@ export default function Header() {
             active ? "h-auto py-4 px-24" : "h-0 overflow-hidden"
           } text-sm transition-all duration-500 ease-out flex gap-10`}
         >
-          <a href="#about" id="about" onClick={handleClick("about")}>
+          <a href="#about" onClick={handleClick("about")}>
             About
           </a>
-          <a href="#projects" id="projects" onClick={handleClick("projects")}>
+          <a href="#projects" onClick={handleClick("projects")}>
             Projects
           </a>
         </div>
